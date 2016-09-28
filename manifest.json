@@ -1,0 +1,52 @@
+{  
+	"name":"Common Hangouts",
+	"version":"36.0",
+	"manifest_version":2,
+	"description":"Google Hangouts, but better",
+	"homepage_url":"http://bit.ly/1BuZ4nS",
+	"icons":{
+			"16":"icons/ch-ico-16.png",
+			"24":"icons/ch-ico-24.png",
+			"32":"icons/ch-ico-32.png",
+			"48":"icons/ch-ico-48.png",
+			"64":"icons/ch-ico-64.png",
+			"128":"icons/ch-ico-128.png"
+	},
+	"default_locale":"en",
+	"background":{
+			"scripts":[
+					"src/bg.js"
+			],
+			"persistent":false
+	},
+	"browser_action":{
+			"default_icon":{
+				"16":"icons/ch-ico-16.png",
+				"24":"icons/ch-ico-24.png",
+				"32":"icons/ch-ico-32.png",
+				"48":"icons/ch-ico-48.png",
+				"64":"icons/ch-ico-64.png",
+				"128":"icons/ch-ico-128.png"
+			},
+			"default_title":"Common Hangouts"
+	},
+	"content_scripts":[
+			{
+					"matches":[
+							"*://hangouts.google.com/*",
+							"*://talkgadget.google.com/*/talkgadget/*"
+					],
+					"css":[
+							"src/common.css"
+					],
+					// "js":[
+					// 		"src/common-h.js"
+					// ],
+					"all_frames":true
+			}
+	],
+	"web_accessible_resources": [
+			"icons/ch-favicon.ico",
+			"icons/common-h-icons.png"
+			]
+}
